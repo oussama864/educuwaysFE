@@ -6,7 +6,7 @@ import { LocalStorageService, SessionStorageService } from 'ngx-webstorage';
 
 import { ApplicationConfigService } from '../config/application-config.service';
 import {Login} from '../../auth/auth-login/login.model';
-import {environment} from "../../../environments/environment";
+import {environment} from '../../../environments/environment';
 
 type JwtToken = {
   id_token: string;
@@ -29,34 +29,34 @@ export class AuthServerProvider {
     'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With'
   });
   getToken(): string {
-    const tokenInLocalStorage: string | null = this.$localStorage.retrieve('authenticationToken');
-    const tokenInSessionStorage: string | null = this.$sessionStorage.retrieve('authenticationToken');
+    const tokenInLocalStorage: string | null = localStorage.getItem('authenticationToken');
+    const tokenInSessionStorage: string | null = localStorage.getItem('authenticationToken');
     return tokenInLocalStorage ?? tokenInSessionStorage ?? '';
   }
 
   login(credentials: Login): Observable<void> {
     return this.http
       .post<JwtToken>(environment.serverUrl + '/api/authenticate', credentials, {headers: this.headerOptions2})
-      .pipe(map(response => this.authenticateSuccess(response, credentials.rememberMe)));
+      .pipe(map(response => this.authenticateSuccess(response, true)));
   }
 
   logout(): Observable<void> {
     return new Observable(observer => {
-      this.$localStorage.clear('authenticationToken');
-      this.$sessionStorage.clear('authenticationToken');
+      localStorage.removeItem('authenticationToken');
       observer.complete();
     });
   }
 
   private authenticateSuccess(response: JwtToken, rememberMe: boolean): void {
     const jwt = response.id_token;
-    console.log('authenticateSuccess: success');
+
     if (rememberMe) {
-      this.$localStorage.store('authenticationToken', jwt);
-      this.$sessionStorage.clear('authenticationToken');
+      localStorage.setItem('authenticationToken', jwt);
+      /*this.$localStorage.store('authenticationToken', jwt);
+      this.$sessionStorage.clear('authenticationToken');*/
     }else {
-      this.$sessionStorage.store('authenticationToken', jwt);
-      this.$localStorage.clear('authenticationToken');
+      /*this.$sessionStorage.store('authenticationToken', jwt);
+      this.$localStorage.clear('authenticationToken');*/
     }
   }
 }

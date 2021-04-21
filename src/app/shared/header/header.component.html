@@ -13,7 +13,7 @@
       </a>
     </div>
     <!-- button signup -->
-    <div class="buy-button">
+    <!--<div class="buy-button">
       <ng-template [ngIf]="navClass === 'nav-light'">
         <a href="javascript: void(0);" class="btn btn-primary login-btn-primary">Sign up</a>
           <a href="javascript: void(0);" class="btn btn-light login-btn-light">Sign up</a>
@@ -24,7 +24,7 @@
 
     </div>
 
-    <!-- button signin -->
+    &lt;!&ndash; button signin &ndash;&gt;
     <div class="buy-button">
       <ng-template [ngIf]="navClass === 'nav-light'">
         <a href="javascript: void(0);" class="btn btn-primary login-btn-primary">Sign in</a>
@@ -34,7 +34,7 @@
         <a href="javascript: void(0);" class="btn btn-primary" >Sign in</a>
       </ng-template>
 
-    </div>
+    </div>-->
 
     <!--end login button-->
     <!-- End Logo container-->
@@ -55,9 +55,9 @@
     <div id="navigation">
       <!-- Navigation Menu-->
       <ul class="navigation-menu" [class]="navClass">
-        <li><a routerLink="/" class="nav-link-ref">Home</a></li>
+        <li><a routerLink="/index-course" class="nav-link-ref"></a></li>
         <li class="has-submenu">
-          <a href="javascript:void(0)" (click)="onMenuClick($event)">Landing</a><span class="menu-arrow"></span>
+          <a href="javascript:void(0)" (click)="onMenuClick($event)">Educaways</a><span class="menu-arrow"></span>
           <ul class="submenu megamenu">
             <li>
               <ul>

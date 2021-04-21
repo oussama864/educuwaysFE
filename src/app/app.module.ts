@@ -142,8 +142,9 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { SwitcherComponent } from './shared/switcher/switcher.component';
 import { IndexOnlineLearningComponent } from './core/components/index-online-learning/index-online-learning.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import {LocalStorageService, SessionStorageService} from "ngx-webstorage";
+import {AuthInterceptor} from "./core/interceptor/auth.interceptor";
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -309,7 +310,12 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
       useValue: DEFAULT_SWIPER_CONFIG
     },
       SessionStorageService,
-    LocalStorageService
+    LocalStorageService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

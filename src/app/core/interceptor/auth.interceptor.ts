@@ -14,12 +14,7 @@ export class AuthInterceptor implements HttpInterceptor {
   ) {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const serverApiUrl = this.applicationConfigService.getEndpointFor('');
-    if (!request.url || (request.url.startsWith('http') && !(serverApiUrl && request.url.startsWith(serverApiUrl)))) {
-      return next.handle(request);
-    }
-
-    const token: string | null = this.localStorage.retrieve('authenticationToken') ?? this.sessionStorage.retrieve('authenticationToken');
+    const token: string | null = localStorage.getItem('authenticationToken') ?? localStorage.getItem('authenticationToken');
     if (token) {
       request = request.clone({
         setHeaders: {

@@ -38,9 +38,11 @@ export class IndexCourseComponent implements OnInit {
     nav: false
   };
 
+
   ngOnInit(): void {
   }
 
+  // tslint:disable-next-line:typedef
   openWindowCustomClass(content) {
     this.modalService.open(content, { windowClass: 'dark-modal', size: 'lg', centered: true });
   }
@@ -82,4 +84,7 @@ export class IndexCourseComponent implements OnInit {
     checkConnection(): void {
         console.log(this.accountService.isAuthenticated());
     }
+
+
+
 }

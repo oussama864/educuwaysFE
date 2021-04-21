@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+// @ts-ignore
 import { AuthServerProvider } from 'app/core/auth/auth-jwt.service';
 import { LocalStorageService, NgxWebstorageModule, SessionStorageService } from 'ngx-webstorage';
 
@@ -27,12 +28,14 @@ describe('Auth JWT', () => {
     });
 
     it('should return token from session storage if local storage is empty', () => {
+      // @ts-ignore
       sessionStorageService.retrieve = jest.fn().mockReturnValue('sessionStorageToken');
       const result = service.getToken();
       expect(result).toEqual('sessionStorageToken');
     });
 
     it('should return token from localstorage storage', () => {
+      // @ts-ignore
       localStorageService.retrieve = jest.fn().mockReturnValue('localStorageToken');
       const result = service.getToken();
       expect(result).toEqual('localStorageToken');
@@ -42,7 +45,9 @@ describe('Auth JWT', () => {
   describe('Login', () => {
     it('should clear session storage and save in local storage when rememberMe is true', () => {
       // GIVEN
+      // @ts-ignore
       localStorageService.store = jest.fn();
+      // @ts-ignore
       sessionStorageService.clear = jest.fn();
 
       // WHEN
@@ -57,7 +62,9 @@ describe('Auth JWT', () => {
 
     it('should clear local storage and save in session storage when rememberMe is false', () => {
       // GIVEN
+      // @ts-ignore
       sessionStorageService.store = jest.fn();
+      // @ts-ignore
       localStorageService.clear = jest.fn();
 
       // WHEN
@@ -74,7 +81,9 @@ describe('Auth JWT', () => {
   describe('Logout', () => {
     it('should clear storage', () => {
       // GIVEN
+      // @ts-ignore
       sessionStorageService.clear = jest.fn();
+      // @ts-ignore
       localStorageService.clear = jest.fn();
 
       // WHEN

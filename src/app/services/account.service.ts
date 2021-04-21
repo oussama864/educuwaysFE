@@ -7,13 +7,14 @@ import {StateStorageService} from '../core/auth/state-storage.service';
 import {Router} from '@angular/router';
 import {Account} from '../models/account.model';
 import {catchError, shareReplay, tap} from 'rxjs/operators';
+import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccountService {
 
-  private userIdentity: Account | null = null;
+  userIdentity: Account | null = null;
   private authenticationState = new ReplaySubject<Account | null>(1);
   private accountCache$?: Observable<Account | null>;
 
@@ -45,19 +46,22 @@ export class AccountService {
   }
 
   identity(force?: boolean): Observable<Account | null> {
+    console.log('identify');
+    // @ts-ignore
     if (!this.accountCache$ || force || !this.isAuthenticated()) {
       this.accountCache$ = this.fetch().pipe(
       catchError(() => of(null)),
           tap((account: Account | null) => {
+            console.log('account' + account);
             this.authenticate(account);
             // After retrieve the account info, the language will be changed to
             // the user's preferred language configured in the account setting
-            if (account?.langKey) {
+           /* if (account?.langKey) {
               const langKey = this.sessionStorage.retrieve('locale') ?? account.langKey;
             }
             if (account) {
               this.navigateToStoredUrl();
-            }
+            }*/
           }),
           shareReplay()
       );
@@ -78,7 +82,7 @@ export class AccountService {
   }
 
   private fetch(): Observable<Account> {
-    return this.http.get<Account>(this.applicationConfigService.getEndpointFor('api/account'));
+    return this.http.get<Account>(environment.serverUrl + '/api/account');
   }
 
   private navigateToStoredUrl(): void {

@@ -38,15 +38,19 @@ export class AuthLoginComponent implements OnInit {
   login(): void {
     this.loginService
         .login({
+            // tslint:disable-next-line:no-non-null-assertion
           username: this.loginForm.get('username')!.value,
+            // tslint:disable-next-line:no-non-null-assertion
           password: this.loginForm.get('password')!.value,
+            // tslint:disable-next-line:no-non-null-assertion
           rememberMe: this.loginForm.get('rememberMe')!.value,
         })
         .subscribe(
             () => {
-                 /*console.log('success');
+                /* console.log('success');*/
                  this.authenticationError = false;
-                 this.router.navigate(['/account-members']);
+               /*  console.log('erreur');*/
+                 this.router.navigate(['/account-profile']);
                  /*if (!this.router.getCurrentNavigation()) {
                     // There were no routing during login (eg from navigationToStoredUrl)
 
@@ -54,4 +58,5 @@ export class AuthLoginComponent implements OnInit {
             },
             () => (this.authenticationError = true)
         );
-    this.router.navigate(['/account-m
+  }
+}

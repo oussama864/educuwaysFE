@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import {Conte} from './conte.model';
 import {FormBuilder} from '@angular/forms';
 import {ConteService} from './conte.service';
+import {Conte} from "../../../models/conte.model";
 
 
 
@@ -54,6 +54,7 @@ export class AccountSettingComponent implements OnInit {
 
 
   ngOnInit(): void {
+
   }
 
   // tslint:disable-next-line:typedef

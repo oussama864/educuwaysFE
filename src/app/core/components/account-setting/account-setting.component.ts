@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import {FormBuilder} from '@angular/forms';
 import {ConteService} from './conte.service';
-import {Conte} from "../../../models/conte.model";
+import {Conte} from '../../../models/conte.model';
 
 
 

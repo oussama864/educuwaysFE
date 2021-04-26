@@ -20,10 +20,9 @@ export class AccountProfileComponent implements OnInit {
   constructor(private accountservice: AccountService, private conteservice: ConteService) { }
 
   ngOnInit(): void {
+    console.log(this.accountservice.userIdentityAuteur);
     this.email = this.accountservice.userIdentity.email;
            /*console.log(this.accountservice.userIdentity);*/
-    this.conteservice.getMyContes(this.email).subscribe();
+   /*this.conteservice.getMyContes(this.email).subscribe();*/
   }
-
-
 }

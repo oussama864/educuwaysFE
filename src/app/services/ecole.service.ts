@@ -10,7 +10,7 @@ export type EntityArrayResponseType = HttpResponse<IEcole[]>;
 
 @Injectable({ providedIn: 'root' })
 export class EcoleService {
-  public resourceUrl = environment.serverUrl + 'api/ecoles';
+  public resourceUrl = environment.serverUrl + 'api/ecole';
 
   constructor(protected http: HttpClient) {}
 

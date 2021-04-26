@@ -20,7 +20,7 @@ export class RegisterService {
   registreType = 'auteur';
   constructor(private http: HttpClient) {}
 
-  save(registration: Registration): Observable<{}> {
+  save(registration: { password: any; langKey: string; login: any; firstname: any; email: any; authorities: string[] }): Observable<{}> {
     return this.http.post(this.url, registration, {headers: this.headerOptions2});
   }
 }

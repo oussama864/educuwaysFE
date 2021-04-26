@@ -8,6 +8,7 @@ import {Router} from '@angular/router';
 import {Account} from '../models/account.model';
 import {catchError, shareReplay, tap} from 'rxjs/operators';
 import {environment} from '../../environments/environment';
+import {Auteur} from '../models/auteur.model';
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +17,9 @@ export class AccountService {
 
   userIdentity: Account | null = null;
   private authenticationState = new ReplaySubject<Account | null>(1);
+  private authenticationStateAuteur = new ReplaySubject<Auteur | null>(1);
   private accountCache$?: Observable<Account | null>;
-
+   userIdentityAuteur: Auteur;
   constructor(
       private sessionStorage: SessionStorageService,
       private http: HttpClient,
@@ -34,6 +36,11 @@ export class AccountService {
     this.userIdentity = identity;
     this.authenticationState.next(this.userIdentity);
   }
+  authenticateAuteur(identity: Auteur | null): void {
+    this.userIdentityAuteur = identity;
+    this.authenticationStateAuteur.next(this.userIdentityAuteur);
+  }
+
 
   hasAnyAuthority(authorities: string[] | string): boolean {
     if (!this.userIdentity) {
@@ -52,7 +59,12 @@ export class AccountService {
       this.accountCache$ = this.fetch().pipe(
       catchError(() => of(null)),
           tap((account: Account | null) => {
-            console.log('account' + account);
+            console.log('account' + account.authorities);
+            if (account.authorities[0] === 'ROLE_AUTEUR'){
+              this.fetchAuthorByEmail(account.email).subscribe((res) => {
+                this.authenticateAuteur(res);
+              });
+            }
             this.authenticate(account);
             // After retrieve the account info, the language will be changed to
             // the user's preferred language configured in the account setting
@@ -80,9 +92,12 @@ export class AccountService {
   getImageUrl(): string {
     return this.userIdentity?.imageUrl ?? '';
   }
-
+/* 5dmt Auteur */
   private fetch(): Observable<Account> {
     return this.http.get<Account>(environment.serverUrl + '/api/account');
+  }
+  private fetchAuthorByEmail(email: string): Observable<Auteur> {
+    return this.http.get<Auteur>(environment.serverUrl + '/api/auteurs/email/' + email);
   }
 
   private navigateToStoredUrl(): void {

@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {RegisterService} from './register.service';
-import {HttpErrorResponse} from '@angular/common/http';
+
 
 @Component({
   selector: 'app-auth-signup',
@@ -30,6 +30,7 @@ export class AuthSignupComponent implements OnInit, AfterViewInit {
         Validators.pattern('^[a-zA-Z0-9!$&*+=?^_`{|}~.-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$|^[_.@A-Za-z0-9-]+$'),
       ],
     ],
+    firsyname: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(254),  Validators.pattern('^[a-zA-Z0-9!$&*+=?^_`{|}~.-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$|^[_.@A-Za-z0-9-]+$'), ], ],
     email: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(254), Validators.email]],
     password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(50)]],
     confirmPassword: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(50)]],
@@ -93,9 +94,10 @@ export class AuthSignupComponent implements OnInit, AfterViewInit {
     } else {
       // tslint:disable-next-line:no-non-null-assertion
       const login = this.registerForm.get(['login'])!.value;
+      const firstname = this.registerForm.get(['firstname'])!.value;
       // tslint:disable-next-line:no-non-null-assertion
       const email = this.registerForm.get(['email'])!.value;
-      this.registerService.save({login, email, password, langKey: 'fr', authorities : this.authorities   }).subscribe(
+      this.registerService.save({login, email, firstname , password, langKey: 'fr', authorities: this.authorities}).subscribe(
           () => (this.success = true)
       );
     }

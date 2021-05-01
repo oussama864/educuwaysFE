@@ -30,7 +30,8 @@ export class AuthSignupComponent implements OnInit, AfterViewInit {
         Validators.pattern('^[a-zA-Z0-9!$&*+=?^_`{|}~.-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$|^[_.@A-Za-z0-9-]+$'),
       ],
     ],
-    firsyname: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(254),  Validators.pattern('^[a-zA-Z0-9!$&*+=?^_`{|}~.-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$|^[_.@A-Za-z0-9-]+$'), ], ],
+    firstName: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(254),  Validators.pattern('^[a-zA-Z0-9!$&*+=?^_`{|}~.-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$|^[_.@A-Za-z0-9-]+$'), ], ],
+   lastName: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(254),  Validators.pattern('^[a-zA-Z0-9!$&*+=?^_`{|}~.-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$|^[_.@A-Za-z0-9-]+$'), ], ],
     email: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(254), Validators.email]],
     password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(50)]],
     confirmPassword: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(50)]],
@@ -59,6 +60,8 @@ export class AuthSignupComponent implements OnInit, AfterViewInit {
         Validators.pattern('^[a-zA-Z0-9!$&*+=?^_`{|}~.-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$|^[_.@A-Za-z0-9-]+$'),
       ],
     ],
+    Nom: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(254),  Validators.pattern('^[a-zA-Z0-9!$&*+=?^_`{|}~.-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$|^[_.@A-Za-z0-9-]+$'), ], ],
+    Adresse: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(254),  Validators.pattern('^[a-zA-Z0-9!$&*+=?^_`{|}~.-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$|^[_.@A-Za-z0-9-]+$'), ], ],
     email: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(254), Validators.email]],
     password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(50)]],
     confirmPassword: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(50)]],
@@ -94,14 +97,42 @@ export class AuthSignupComponent implements OnInit, AfterViewInit {
     } else {
       // tslint:disable-next-line:no-non-null-assertion
       const login = this.registerForm.get(['login'])!.value;
-      const firstname = this.registerForm.get(['firstname'])!.value;
+      // tslint:disable-next-line:no-non-null-assertion
+      const firstName = this.registerForm.get(['firstName'])!.value;
+      // tslint:disable-next-line:no-non-null-assertion
+      const lastName = this.registerForm.get(['lastName'])!.value;
       // tslint:disable-next-line:no-non-null-assertion
       const email = this.registerForm.get(['email'])!.value;
-      this.registerService.save({login, email, firstname , password, langKey: 'fr', authorities: this.authorities}).subscribe(
+      this.registerService.save({login, firstName, lastName, email, password, langKey: 'fr', authorities: this.authorities}).subscribe(
           () => (this.success = true)
       );
     }
   }
+ /* registerecole(): void {
+    this.doNotMatch = false;
+    this.error = false;
+    this.errorEmailExists = false;
+    this.errorUserExists = false;
+
+    // tslint:disable-next-line:no-non-null-assertion
+    const password = this.registerFormEcole.get(['password'])!.value;
+    // tslint:disable-next-line:no-non-null-assertion
+    if (password !== this.registerFormEcole.get(['confirmPassword'])!.value) {
+      this.doNotMatch = true;
+    } else {
+      // tslint:disable-next-line:no-non-null-assertion
+      const login = this.registerFormEcole.get(['login'])!.value;
+      // tslint:disable-next-line:no-non-null-assertion
+      const Nom = this.registerFormEcole.get(['Nom'])!.value;
+      // tslint:disable-next-line:no-non-null-assertion
+      const Adresse = this.registerFormEcole.get(['Adresse'])!.value;
+      // tslint:disable-next-line:no-non-null-assertion
+      const email = this.registerFormEcole.get(['email'])!.value;
+      this.registerService.save({login, Nom, Adresse, email, password, langKey: 'fr', authorities: this.authorities}).subscribe(
+          () => (this.success = true)
+      );
+    }
+  }*/
 
 
 

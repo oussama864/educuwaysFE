@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { Registration } from './register.model';
+
 import {environment} from '../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
@@ -19,8 +19,7 @@ export class RegisterService {
   url =  environment.serverUrl + '/api/register';
   registreType = 'auteur';
   constructor(private http: HttpClient) {}
-
-  save(registration: { password: any; langKey: string; login: any; firstname: any; email: any; authorities: string[] }): Observable<{}> {
+  save(registration: { firstName: any; lastName: any; password: any; langKey: string; login: any; email: any; authorities: string[]; }): Observable<{}> {
     return this.http.post(this.url, registration, {headers: this.headerOptions2});
   }
 }

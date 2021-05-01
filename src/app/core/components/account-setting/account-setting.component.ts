@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder} from '@angular/forms';
 import {ConteService} from './conte.service';
 import {Conte} from '../../../models/conte.model';
+import {AccountService} from '../../../services/account.service';
 
 
 
@@ -33,7 +34,8 @@ export class AccountSettingComponent implements OnInit {
   });
   constructor(
       protected conteService: ConteService,
-      protected fb: FormBuilder
+      protected fb: FormBuilder,
+      private accountservice: AccountService
   ) {}
 
 
@@ -116,8 +118,8 @@ export class AccountSettingComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   private createFromForm() {
-
-      return {
+    console.log(this.accountservice.userIdentityAuteur);
+    return {
         ...new Conte(),
         type: this.editForm.get(['Type'])!.value,
         description: this.editForm.get(['Description'])!.value,
@@ -127,6 +129,7 @@ export class AccountSettingComponent implements OnInit {
         titre: this.editForm.get(['titre'])!.value,
         nbPage: this.editForm.get(['Nombres_de_pages'])!.value,
         maisonEdition: this.editForm.get(['MaisonEdition'])!.value,
+      emailAuteur : this.accountservice.userIdentity.email
       };
     }
   }

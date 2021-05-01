@@ -297,14 +297,14 @@
         </div>
 -->
         <h5 class="mt-4 mb-0">Posts & News :</h5>
-        <div class="row">
+        <div class="row" *ngFor= "let conte of contes">
           <div class="col-md-6 mt-4 pt-2">
             <div class="card blog rounded border-0 shadow">
               <div class="position-relative">
-                <img src="assets/images/blog/01.jpg" class="card-img-top rounded-top" alt="...">
+                <img src="{{ressourceUrl+'/api/conte/ImageConte/'+conte.id}}" class="card-img-top rounded-top" alt="...">
                 <div class="overlay rounded-top bg-dark"></div>
               </div>
-              <div class="card-body content">
+           <!--   <div class="card-body content">
                 <h5><a href="javascript:void(0)" class="card-title title text-dark">Design your apps in your own way</a>
                 </h5>
                 <div class="post-meta d-flex justify-content-between mt-3">
@@ -317,46 +317,20 @@
                   <a href="page-blog-detail" class="text-muted readmore">Read More <i
                       class="mdi mdi-chevron-right"></i></a>
                 </div>
-              </div>
-              <div class="author">
+              </div>-->
+             <!-- <div class="author">
                 <small class="text-light user d-block"><i class="mdi mdi-account"></i> Calvin Carlo</small>
                 <small class="text-light date"><i class="mdi mdi-calendar-check"></i> 13th August, 2019</small>
-              </div>
+              </div>-->
             </div>
           </div>
           <!--end col-->
 
-          <div class="col-md-6 mt-4 pt-2">
-            <div class="card blog rounded border-0 shadow">
-              <div class="position-relative">
-                <img src="assets/images/blog/02.jpg" class="card-img-top rounded-top" alt="...">
-                <div class="overlay rounded-top bg-dark"></div>
-              </div>
-              <div class="card-body content">
-                <h5><a href="javascript:void(0)" class="card-title title text-dark">How apps is changing the IT
-                    world</a></h5>
-                <div class="post-meta d-flex justify-content-between mt-3">
-                  <ul class="list-unstyled mb-0">
-                    <li class="list-inline-item mr-2 mb-0"><a href="javascript:void(0)" class="text-muted like"><i
-                          class="mdi mdi-heart-outline mr-1"></i>33</a></li>
-                    <li class="list-inline-item"><a href="javascript:void(0)" class="text-muted comments"><i
-                          class="mdi mdi-comment-outline mr-1"></i>08</a></li>
-                  </ul>
-                  <a routerLink="/page-blog-detail" class="text-muted readmore">Read More <i
-                      class="mdi mdi-chevron-right"></i></a>
-                </div>
-              </div>
-              <div class="author">
-                <small class="text-light user d-block"><i class="mdi mdi-account"></i> Calvin Carlo</small>
-                <small class="text-light date"><i class="mdi mdi-calendar-check"></i> 13th August, 2019</small>
-              </div>
-            </div>
-          </div>
           <!--end col-->
 
-          <div class="col-12 mt-4 pt-2">
+         <!-- <div class="col-12 mt-4 pt-2">
             <a routerLink="/page-blog-grid" class="btn btn-primary">See More <i class="mdi mdi-chevron-right"></i></a>
-          </div>
+          </div>-->
           <!--end col-->
         </div>
         <!--end row-->

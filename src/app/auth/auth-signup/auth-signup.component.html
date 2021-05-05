@@ -255,7 +255,7 @@
               </div>
             </form>
             <!-- an zid-->
-            <form *ngIf="registerService.registreType==='ecole'" class="login-form mt-4" (ngSubmit)="register()" [formGroup]="registerFormEcole" >
+            <form *ngIf="registerService.registreType==='ecole'" class="login-form mt-4" (ngSubmit)="register()" [formGroup]="registerForm" >
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group position-relative">
@@ -306,6 +306,10 @@
 
                 <!-- Ecole end -->
 
+              </div>
+              <div class="mx-auto">
+                <p class="mb-0 mt-3"><small class="text-dark mr-2">Already have an account ?</small> <a
+                        routerLink="/auth-login" class="text-dark font-weight-bold">Sign in</a></p>
               </div>
             </form>
 

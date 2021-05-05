@@ -189,7 +189,7 @@
       </div>
       <!--end col-->
 
-      <div class="col-lg-8 col-12">
+
         <!--<div class="border-bottom pb-4">
           <h5>Krista Joseph</h5>
           <p class="text-muted mb-0">I have started my career as a trainee and prove my self and achieve all the
@@ -296,49 +296,37 @@
           &lt;!&ndash;end row&ndash;&gt;
         </div>
 -->
-        <h5 class="mt-4 mb-0">Posts & News :</h5>
-        <div class="row" *ngFor= "let conte of contes">
-          <div class="col-md-6 mt-4 pt-2">
-            <div class="card blog rounded border-0 shadow">
-              <div class="position-relative">
-                <img src="{{ressourceUrl+'/api/conte/ImageConte/'+conte.id}}" class="card-img-top rounded-top" alt="...">
-                <div class="overlay rounded-top bg-dark"></div>
-              </div>
-           <!--   <div class="card-body content">
-                <h5><a href="javascript:void(0)" class="card-title title text-dark">Design your apps in your own way</a>
-                </h5>
-                <div class="post-meta d-flex justify-content-between mt-3">
-                  <ul class="list-unstyled mb-0">
-                    <li class="list-inline-item mr-2 mb-0"><a href="javascript:void(0)" class="text-muted like"><i
-                          class="mdi mdi-heart-outline mr-1"></i>33</a></li>
-                    <li class="list-inline-item"><a href="javascript:void(0)" class="text-muted comments"><i
-                          class="mdi mdi-comment-outline mr-1"></i>08</a></li>
-                  </ul>
-                  <a href="page-blog-detail" class="text-muted readmore">Read More <i
-                      class="mdi mdi-chevron-right"></i></a>
+
+        <div class="col-lg-8 col-12">
+
+          <div class="rounded shadow p-4">
+            <h5 class="mb-0">Mes contes : </h5>
+        <div class="row projects-wrapper "  >
+          <div class=" col-md-6  mt-4 pt-2" *ngFor="let conte of contes">
+            <div class="card courses-desc overflow-hidden rounded shadow border-0">
+              <div class="card-body p-0">
+                <a routerLink="/page-work-detail"><img src="{{ressourceUrl+'/api/ImageConte/'+conte.id}}"
+                                                       class="img-fluid rounded work-image" alt=""></a>
+                <div class="content pt-3">
+                  <h5 class="mb-1 mt-1 ml-3"><a routerLink="/page-work-detail" class="text-dark title">Titre : </a>{{conte.titre}}</h5>
+                  <h6 class="text-muted tag mb-1 mt-1 ml-3 ">Prix :{{conte.prix}} </h6>
+                  <h6 class="text-muted tag mb-1 mt-1 ml-3">nbPage :{{conte.nbPage}} </h6>
+                  <h6 class="text-muted tag mb-1 mt-1 ml-3 " style="max-height: 100px; overflow-y: scroll"> {{conte.description}} </h6>
                 </div>
-              </div>-->
-             <!-- <div class="author">
-                <small class="text-light user d-block"><i class="mdi mdi-account"></i> Calvin Carlo</small>
-                <small class="text-light date"><i class="mdi mdi-calendar-check"></i> 13th August, 2019</small>
-              </div>-->
+              </div>
             </div>
           </div>
-          <!--end col-->
+          </div>
 
-          <!--end col-->
 
-         <!-- <div class="col-12 mt-4 pt-2">
-            <a routerLink="/page-blog-grid" class="btn btn-primary">See More <i class="mdi mdi-chevron-right"></i></a>
-          </div>-->
           <!--end col-->
         </div>
         <!--end row-->
       </div>
       <!--end col-->
     </div>
+    </div>
     <!--end row-->
-  </div>
   <!--end container-->
 </section>
 <!--end section-->

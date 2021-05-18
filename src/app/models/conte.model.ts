@@ -23,6 +23,8 @@ export interface IConte {
     auteur?: IAuteur | null;
     competition?: ICompetition | null;
     emailAuteur?: string;
+    readyForCompetetion?: boolean;
+    readyForCompetitionDate?: Date;
 }
 
 export class Conte implements IConte {
@@ -45,9 +47,12 @@ export class Conte implements IConte {
         public qcms?: IQcm[] | null,
         public auteur?: IAuteur | null,
         public competition?: ICompetition | null,
-        public emailAuteur?: string
+        public emailAuteur?: string,
+        public readyForCompetetion?: boolean,
+        public readyForCompetitionDate?: Date,
     ) {
         this.deleted = this.deleted ?? false;
+        this.readyForCompetetion = this.readyForCompetetion ?? false;
     }
 }
 

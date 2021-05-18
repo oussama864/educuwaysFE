@@ -302,11 +302,15 @@
           <div class="rounded shadow p-4">
             <h5 class="mb-0">Mes contes : </h5>
         <div class="row projects-wrapper "  >
+
           <div class=" col-md-6  mt-4 pt-2" *ngFor="let conte of contes">
-            <div class="card courses-desc overflow-hidden rounded shadow border-0">
+            <div class="card courses-desc overflow-hidden rounded shadow border-0" style="position:relative">
               <div class="card-body p-0">
+
                 <a routerLink="/page-work-detail"><img src="{{ressourceUrl+'/api/ImageConte/'+conte.id}}"
                                                        class="img-fluid rounded work-image" alt=""></a>
+                <button class="btn-img" (click)="participer(conte)">Participer</button>
+
                 <div class="content pt-3">
                   <h5 class="mb-1 mt-1 ml-3"><a routerLink="/page-work-detail" class="text-dark title">Titre : </a>{{conte.titre}}</h5>
                   <h6 class="text-muted tag mb-1 mt-1 ml-3 ">Prix :{{conte.prix}} </h6>

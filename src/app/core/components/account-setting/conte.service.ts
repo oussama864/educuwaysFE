@@ -31,7 +31,7 @@ export class ConteService {
 
   update(conte: IConte): Observable<EntityResponseType> {
     return this.http
-      .put<IConte>(`${this.resourceUrl}`, conte, { observe: 'response' });
+      .put<IConte>(environment.serverUrl + '/api/contes/'+conte.id, conte, { observe: 'response' });
   }
 
   partialUpdate(conte: IConte): Observable<EntityResponseType> {

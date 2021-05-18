@@ -3,14 +3,6 @@ import {AccountService} from '../../../services/account.service';
 import {ConteService} from '../account-setting/conte.service';
 import {IConte} from '../../../models/conte.model';
 import {environment} from '../../../../environments/environment';
-
-
-
-
-
-
-
-
 @Component({
   selector: 'app-account-profile',
   templateUrl: './account-profile.component.html',
@@ -35,4 +27,13 @@ export class AccountProfileComponent implements OnInit {
            /*console.log(this.accountservice.userIdentity);*/
    /*this.conteservice.getMyContes(this.email).subscribe();*/
   }
+
+
+
+
+    participer(conte: IConte) {
+        conte.readyForCompetetion = true;
+        conte.readyForCompetitionDate = new Date();
+        this.conteService.update(conte).subscribe();
+    }
 }

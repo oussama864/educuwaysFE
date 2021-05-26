@@ -9,7 +9,7 @@ export type EntityArrayResponseType = HttpResponse<IAuteur[]>;
 
 @Injectable({ providedIn: 'root' })
 export class AuteurService {
-  public resourceUrl = environment.serverUrl + '/api/auteur';
+  public resourceUrl = environment.serverUrl + '/api/auteurs';
 
   constructor(protected http: HttpClient) {}
 
@@ -29,8 +29,8 @@ export class AuteurService {
       .patch<IAuteur>(this.resourceUrl, auteur, { observe: 'response' });
   }
 
-  find(email: string): Observable<EntityResponseType> {
-    return this.http.get<IAuteur>(this.resourceUrl + '/' + email, { observe: 'response' });
+  findByEmail(email: string): Observable<EntityResponseType> {
+    return this.http.get<IAuteur>(this.resourceUrl + '/email/' + email, { observe: 'response' });
   }
 
   query(req?: any): Observable<EntityArrayResponseType> {

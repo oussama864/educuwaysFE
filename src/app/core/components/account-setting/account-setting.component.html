@@ -1,307 +1,366 @@
-  <!-- Hero Start -->
-  <section class="bg-profile d-table w-100 bg-primary" id="home"
-    style="background: url('assets/images/account/bg.png') center center;">
+<!-- Hero Start -->
+<section class="bg-profile d-table w-100 bg-primary" id="home"
+         style="background: url('assets/images/account/bg.png') center center;">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="card public-profile border-0 rounded shadow" style="z-index: 1;">
-            <div class="card-body">
-              <div class="row align-items-center">
-                <div class="col-lg-2 col-md-3 text-md-left text-center">
-                  <img src="assets/images/client/05.jpg"
-                    class="avatar avatar-large rounded-circle shadow d-block mx-auto" alt="">
-                </div>
-                <!--end col-->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card public-profile border-0 rounded shadow" style="z-index: 1;">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-lg-2 col-md-3 text-md-left text-center">
+                                <img src="assets/images/client/05.jpg"
+                                     class="avatar avatar-large rounded-circle shadow d-block mx-auto" alt="">
+                            </div>
+                            <!--end col-->
 
 
-                <div class="col-lg-10 col-md-9">
-                  <div class="row align-items-end">
-                    <div class="col-md-7 text-md-left text-center mt-4 mt-sm-0">
-                      <h3 class="title mb-0">Krista Joseph</h3>
-                      <small class="text-muted h6 mr-2">Web Developer</small>
-                      <ul class="list-inline mb-0 mt-3">
-                        <li class="list-inline-item mr-2"><a href="javascript:void(0)" class="text-muted"
-                            title="Instagram">
-                            <i-feather name="instagram" class="fea icon-sm mr-2"></i-feather>
-                            krista_joseph
-                          </a></li>
-                        <li class="list-inline-item"><a href="javascript:void(0)" class="text-muted" title="Linkedin">
-                            <i-feather name="linkedin" class="fea icon-sm mr-2"></i-feather>
-                            Krista Joseph
-                          </a></li>
-                      </ul>
+                            <div class="col-lg-10 col-md-9">
+                                <div class="row align-items-end">
+                                    <div class="col-md-7 text-md-left text-center mt-4 mt-sm-0">
+                                        <h3 class="title mb-0">
+                                            Mr {{!!user ? user.firstName : '-'}}  {{!!user ? user.lastName : '-'}}</h3>
+                                        <small class="text-muted h6 mr-2"> Mes points : {{!!users? users.points : '-'}}</small>
+                                    </div>
+                                    <!--end col-->
+                                    <!--<div class="col-md-5 text-md-right text-center">
+                                      <ul class="list-unstyled social-icon social mb-0 mt-4">
+                                        <li class="list-inline-item"><a href="javascript:void(0)" class="rounded" placement="bottom"
+                                            ngbTooltip="Add Friend">
+                                            <i-feather name="user-plus" class="fea icon-sm fea-social"></i-feather>
+                                          </a></li>
+                                        <li class="list-inline-item ml-1"><a href="javascript:void(0)" class="rounded" placement="bottom"
+                                            ngbTooltip="Messages">
+                                            <i-feather name="message-circle" class="fea icon-sm fea-social"></i-feather>
+                                          </a></li>
+                                        <li class="list-inline-item ml-1"><a href="javascript:void(0)" class="rounded" placement="bottom"
+                                            ngbTooltip="Notifications">
+                                            <i-feather name="bell" class="fea icon-sm fea-social"></i-feather>
+                                          </a></li>
+                                        <li class="list-inline-item ml-1"><a routerLink="/account-setting" class="rounded" placement="bottom"
+                                            ngbTooltip="Settings">
+                                            <i-feather name="tool" class="fea icon-sm fea-social"></i-feather>
+                                          </a></li>
+                                      </ul>
+                                      &lt;!&ndash;end icon&ndash;&gt;
+                                    </div>-->
+                                    <!--end col-->
+                                </div>
+                                <!--end row-->
+                            </div>
+                            <!--end col-->
+                        </div>
+                        <!--end row-->
                     </div>
-                    <!--end col-->
-                    <div class="col-md-5 text-md-right text-center">
-                      <ul class="list-unstyled social-icon social mb-0 mt-4">
-                        <li class="list-inline-item"><a href="javascript:void(0)" class="rounded" placement="bottom"
-                            ngbTooltip="Add Friend">
-                            <i-feather name="user-plus" class="fea icon-sm fea-social"></i-feather>
-                          </a></li>
-                        <li class="list-inline-item ml-1"><a href="javascript:void(0)" class="rounded" placement="bottom"
-                            ngbTooltip="Messages">
-                            <i-feather name="message-circle" class="fea icon-sm fea-social"></i-feather>
-                          </a></li>
-                        <li class="list-inline-item ml-1"><a href="javascript:void(0)" class="rounded" placement="bottom"
-                            ngbTooltip="Notifications">
-                            <i-feather name="bell" class="fea icon-sm fea-social"></i-feather>
-                          </a></li>
-                        <li class="list-inline-item ml-1"><a routerLink="/account-setting" class="rounded" placement="bottom"
-                            ngbTooltip="Settings">
-                            <i-feather name="tool" class="fea icon-sm fea-social"></i-feather>
-                          </a></li>
-                      </ul>
-                      <!--end icon-->
-                    </div>
-                    <!--end col-->
-                  </div>
-                  <!--end row-->
                 </div>
-                <!--end col-->
-              </div>
-              <!--end row-->
             </div>
-          </div>
+            <!--end col-->
         </div>
-        <!--end col-->
-      </div>
-      <!--end row-->
+        <!--end row-->
     </div>
     <!--ed container-->
-  </section>
-  <!--end section-->
-  <!-- Hero End -->
+</section>
+<!--end section-->
+<!-- Hero End -->
 
-  <!-- Profile Start -->
+<!-- Profile Start -->
 
-  <section class="section mt-60">
+<section class="section mt-60">
     <div class="container mt-lg-3">
-      <div class="row">
-        <div class="col-lg-4 col-md-6 col-12 d-lg-block d-none">
-          <div class="sidebar sticky-bar p-4 rounded shadow">
-            <!--<div class="widget">
-              <h5 class="widget-title">Followers :</h5>
-              <div class="row mt-4">
-                <div class="col-6 text-center">
-                  <i-feather name="user-plus" class="fea icon-ex-md text-primary mb-1"></i-feather>
-                  <h5 class="mb-0">2588</h5>
-                  <p class="text-muted mb-0">Followers</p>
-                </div>
-                &lt;!&ndash;end col&ndash;&gt;
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-12 d-lg-block d-none">
+                <div class="sidebar sticky-bar p-4 rounded shadow">
+                    <!--<div class="widget">
+                      <h5 class="widget-title">Followers :</h5>
+                      <div class="row mt-4">
+                        <div class="col-6 text-center">
+                          <i-feather name="user-plus" class="fea icon-ex-md text-primary mb-1"></i-feather>
+                          <h5 class="mb-0">2588</h5>
+                          <p class="text-muted mb-0">Followers</p>
+                        </div>
+                        &lt;!&ndash;end col&ndash;&gt;
 
-                <div class="col-6 text-center">
-                  <i-feather name="users" class="fea icon-ex-md text-primary mb-1"></i-feather>
-                  <h5 class="mb-0">454</h5>
-                  <p class="text-muted mb-0">Following</p>
-                </div>
-                &lt;!&ndash;end col&ndash;&gt;
-              </div>
-              &lt;!&ndash;end row&ndash;&gt;
-            </div>
-
-            <div class="widget mt-4 pt-2">
-              <h5 class="widget-title">Projects :</h5>
-              <div class="progress-box mt-4">
-                <h6 class="title text-muted">Progress</h6>
-                <div class="progress">
-                  <div class="progress-bar position-relative bg-primary" style="width:50%;">
-                    <div class="progress-value d-block text-muted h6">24 / 48</div>
-                  </div>
-                </div>
-              </div>
-              &lt;!&ndash;end process box&ndash;&gt;
-            </div>-->
-
-            <div class="widget">
-              <div class="row">
-                <div class="col-6 mt-4 pt-2">
-                  <a routerLink="/account-profile" class="accounts rounded d-block shadow text-center py-3">
-                    <span class="pro-icons h3 text-muted"><i class="uil uil-dashboard"></i></span>
-                    <h6 class="title text-dark h6 my-0">Profile</h6>
-                  </a>
-                </div>
-                <!--end col-->
-
-                <div class="col-6 mt-4 pt-2">
-                  <a routerLink="/account-members" class="accounts rounded d-block shadow text-center py-3">
-                    <span class="pro-icons h3 text-muted"><i class="uil uil-users-alt"></i></span>
-                    <h6 class="title text-dark h6 my-0">Members</h6>
-                  </a>
-                </div>
-                <!--end col-->
-
-                <div class="col-6 mt-4 pt-2">
-                  <a routerLink="/account-works" class="accounts rounded d-block shadow text-center py-3">
-                    <span class="pro-icons h3 text-muted"><i class="uil uil-file"></i></span>
-                    <h6 class="title text-dark h6 my-0">Works</h6>
-                  </a>
-                </div>
-                <!--end col-->
-
-                <div class="col-6 mt-4 pt-2">
-                  <a routerLink="/account-messages" class="accounts rounded d-block shadow text-center py-3">
-                    <span class="pro-icons h3 text-muted"><i class="uil uil-envelope-star"></i></span>
-                    <h6 class="title text-dark h6 my-0">Messages</h6>
-                  </a>
-                </div>
-                <!--end col-->
-
-                <div class="col-6 mt-4 pt-2">
-                  <a routerLink="/account-payments" class="accounts rounded d-block shadow text-center py-3">
-                    <span class="pro-icons h3 text-muted"><i class="uil uil-transaction"></i></span>
-                    <h6 class="title text-dark h6 my-0">Recharge des points</h6>
-                  </a>
-                </div>
-                <!--end col-->
-
-                <div class="col-6 mt-4 pt-2">
-                  <a routerLink="/account-setting" class="accounts active rounded d-block shadow text-center py-3">
-                    <span class="pro-icons h3 text-muted"><i class="uil uil-setting"></i></span>
-                    <h6 class="title text-dark h6 my-0">Settings</h6>
-                  </a>
-                </div>
-                <!--end col-->
-
-                <div class="col-6 mt-4 pt-2">
-                  <a routerLink="/index-course" class="accounts rounded d-block shadow text-center py-3">
-                    <span class="pro-icons h3 text-muted"><i class="uil uil-sign-out-alt"></i></span>
-                    <h6 class="title text-dark h6 my-0">Logout</h6>
-                  </a>
-                </div>
-                <!--end col-->
-              </div>
-              <!--end row-->
-            </div>
-
-
-          </div>
-        </div>
-        <!--end col-->
-
-        <div class="col-lg-8 col-12">
-          <div class="card border-0 rounded shadow">
-            <div class="card-body">
-              <h5 class="text-md-left text-center"> Ajouter  des contes </h5> <br><br>
-
-              <form  [formGroup]="editForm">
-              <div class="form-group" >
-               <label>insérer image</label><br>
-
-                 <input type="file" accept="image/*" (change)="oneSelectFile($event)">
-                <img [src]="imgUrl" height="200" *ngIf="imgURL">
-              </div>
-                <div class="row mt-4">
-                  <div class="col-md-6">
-                    <div class="form-group position-relative">
-                      <label>Édition</label>
-                      <i-feather name="MaisonÉdition" class="fea icon-sm icons"></i-feather>
-                      <input name="MaisonÉdition" id="MaisonÉdition" type="text" class="form-control pl-5" placeholder="MaisonÉdition"
-                             formControlName="MaisonEdition">
-                    </div>
-                  </div>
-                  <!--end col-->
-                  <div class="col-md-6">
-                    <div class="form-group position-relative"  >
-                      <label>Langues :</label><br>
-                      <i-feather name="langues" class="fea icon-sm icons"></i-feather>
-                      <select class="form-select" formControlName="langues" aria-label="Default select example">
-                        <option value="Anglais">Anglais</option>
-                        <option value="Français">français</option>
-                        <option value="Arabe">Arabe</option>
-
-                      </select>
-
-                    </div>
-                  </div>
-                  <!--end col-->
-                  <div class="col-md-6">
-                    <div class="form-group position-relative" >
-                      <label>Titre</label>
-                      <i-feather name="Titre" class="fea icon-sm icons"></i-feather>
-                      <input name="Titre" id="Titre" type="text" class="form-control pl-5" placeholder="Titre"
-                             formControlName="titre">
-                    </div>
-                  </div>
-
-                  <div class="col-md-6">
-                    <div class="form-group position-relative">
-                      <label>Type</label>
-                      <i-feather name="bookmark" class="fea icon-sm icons"></i-feather>
-                      <input name="Type" id="Type" type="text" class="form-control pl-5"
-                        placeholder="Type" formControlName="Type">
-                    </div>
-                  </div>
-
-                  <div class="col-lg-12">
-                    <div class="form-group position-relative" >
-                      <label>Description</label>
-                      <i-feather name="message-circle" class="fea icon-sm icons"></i-feather>
-                      <textarea name="comments" id="comments" rows="4" class="form-control pl-5"
-                        placeholder="Description :" formControlName="Description"></textarea>
-                    </div>
-                  </div>
-
-                  <div class="col-md-6">
-                    <div class="form-group position-relative">
-                      <label>Nombres de pages</label>
-                      <i-feather name="Nombres_de_pages" class="fea icon-sm icons"></i-feather>
-                      <input name="Nombres_de_pages" id="Nombres_de_pages" type="text" class="form-control pl-5" placeholder="Nombres_de_pages"
-                             formControlName="Nombres_de_pages">
-                    </div>
-                  </div>
-
-                  <div class="col-md-6">
-                    <div class="form-group position-relative">
-                      <label>Prix</label>
-                      <i-feather name="Prix" class="fea icon-sm icons"></i-feather>
-                      <input name="Prix" id="Prix" type="text" class="form-control pl-5" placeholder="Prix"
-                             formControlName="Prix">
-                    </div>
-                  </div>
-
-                </div>
-              </form>
-              <!--end form-->
-
-
-              <div class="row">
-                <div class="col-md-6 mt-4 pt-2">
-
-
-                  <form>
-                    <div class="row mt-4">
-
-                      <div class="col-lg-12 mt-2 mb-0">
-                        <button class="btn btn-primary"(click)="save()" >Ajouter</button>
+                        <div class="col-6 text-center">
+                          <i-feather name="users" class="fea icon-ex-md text-primary mb-1"></i-feather>
+                          <h5 class="mb-0">454</h5>
+                          <p class="text-muted mb-0">Following</p>
+                        </div>
+                        &lt;!&ndash;end col&ndash;&gt;
                       </div>
-                      <!--end col-->
+                      &lt;!&ndash;end row&ndash;&gt;
                     </div>
-                    <!--end row-->
 
-                  </form>
+                    <div class="widget mt-4 pt-2">
+                      <h5 class="widget-title">Projects :</h5>
+                      <div class="progress-box mt-4">
+                        <h6 class="title text-muted">Progress</h6>
+                        <div class="progress">
+                          <div class="progress-bar position-relative bg-primary" style="width:50%;">
+                            <div class="progress-value d-block text-muted h6">24 / 48</div>
+                          </div>
+                        </div>
+                      </div>
+                      &lt;!&ndash;end process box&ndash;&gt;
+                    </div>-->
+
+                    <div class="widget">
+                        <div class="row">
+                            <div class="col-6 mt-4 pt-2">
+                                <a routerLink="/account-profile"
+                                   class="accounts rounded d-block shadow text-center py-3">
+                                    <span class="pro-icons h3 text-muted"><i class="uil uil-dashboard"></i></span>
+                                    <h6 class="title text-dark h6 my-0">Mes Contes</h6>
+                                </a>
+                            </div>
+                            <!--end col-->
+
+
+                            <!--end col-->
+
+                            <!--<div class="col-6 mt-4 pt-2">
+                              <a routerLink="/account-works" class="accounts rounded d-block shadow text-center py-3">
+                                <span class="pro-icons h3 text-muted"><i class="uil uil-file"></i></span>
+                                <h6 class="title text-dark h6 my-0">Works</h6>
+                              </a>
+                            </div>
+                            &lt;!&ndash;end col&ndash;&gt;-->
+
+
+                            <!--end col-->
+
+                            <div class="col-6 mt-4 pt-2">
+                                <a routerLink="/account-payments"
+                                   class="accounts rounded d-block shadow text-center py-3">
+                                    <span class="pro-icons h3 text-muted"><i class="uil uil-transaction"></i></span>
+                                    <h6 class="title text-dark h6 my-0">Recharge des points</h6>
+                                </a>
+                            </div>
+                            <!--end col-->
+
+                            <div class="col-6 mt-4 pt-2">
+                                <a routerLink="/account-setting"
+                                   class="accounts active rounded d-block shadow text-center py-3">
+                                    <span class="pro-icons h3 text-muted"><i class="uil uil-setting"></i></span>
+                                    <h6 class="title text-dark h6 my-0">Ajouter</h6>
+                                </a>
+                            </div>
+                            <!--end col-->
+
+                            <div class="col-6 mt-4 pt-2">
+                                <a routerLink="/index-course" class="accounts rounded d-block shadow text-center py-3">
+                                    <span class="pro-icons h3 text-muted"><i class="uil uil-sign-out-alt"></i></span>
+                                    <h6 class="title text-dark h6 my-0">Logout</h6>
+                                </a>
+                            </div>
+                            <!--end col-->
+                        </div>
+                        <!--end row-->
+                    </div>
+
+
                 </div>
-                <!--end col-->
-
-
-
-              </div>
             </div>
-          </div>
+            <!--end col-->
+
+            <div class="col-lg-8 col-12">
+                <div class="card border-0 rounded shadow">
+                    <div class="card-body">
+                        <h2 class="text-md-left text-center"> Ajouter des contes </h2> <br><br>
+
+                        <form [formGroup]="editForm">
+                            <div class="form-group">
+                                <label>insérer image</label><br>
+
+                                <input type="file" accept="image/*" (change)="oneSelectFile($event)">
+                                <img [src]="imgUrl" height="200" *ngIf="imgURL">
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col-md-6">
+                                    <div class="form-group position-relative">
+                                        <label>Édition</label>
+                                        <i-feather name="MaisonÉdition" class="fea icon-sm icons"></i-feather>
+                                        <input name="MaisonÉdition" id="MaisonÉdition" type="text"
+                                               class="form-control pl-5" placeholder="MaisonÉdition"
+                                               formControlName="MaisonEdition">
+                                    </div>
+                                </div>
+                                <!--end col-->
+                                <div class="col-md-6">
+                                    <div class="form-group position-relative">
+                                        <label>Langues :</label><br>
+                                        <i-feather name="langues" class="fea icon-sm icons"></i-feather>
+                                        <select class="form-select" formControlName="langues"
+                                                aria-label="Default select example">
+                                            <option value="Anglais">Anglais</option>
+                                            <option value="Français">français</option>
+                                            <option value="Arabe">Arabe</option>
+
+                                        </select>
+
+                                    </div>
+                                </div>
+                                <!--end col-->
+                                <div class="col-md-6">
+                                    <div class="form-group position-relative">
+                                        <label>Titre</label>
+                                        <i-feather name="Titre" class="fea icon-sm icons"></i-feather>
+                                        <input name="Titre" id="Titre" type="text" class="form-control pl-5"
+                                               placeholder="Titre"
+                                               formControlName="titre">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group position-relative">
+                                        <label>Type</label>
+                                        <i-feather name="bookmark" class="fea icon-sm icons"></i-feather>
+                                        <input name="Type" id="Type" type="text" class="form-control pl-5"
+                                               placeholder="Type" formControlName="Type">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <div class="form-group position-relative">
+                                        <label>Description</label>
+                                        <i-feather name="message-circle" class="fea icon-sm icons"></i-feather>
+                                        <textarea name="comments" id="comments" rows="4" class="form-control pl-5"
+                                                  placeholder="Description :" formControlName="Description"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group position-relative">
+                                        <label>Nombres de pages</label>
+                                        <i-feather name="Nombres_de_pages" class="fea icon-sm icons"></i-feather>
+                                        <input name="Nombres_de_pages" id="Nombres_de_pages" type="text"
+                                               class="form-control pl-5" placeholder="Nombres_de_pages"
+                                               formControlName="Nombres_de_pages">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group position-relative">
+                                        <label>Prix</label>
+                                        <i-feather name="Prix" class="fea icon-sm icons"></i-feather>
+                                        <input name="Prix" id="Prix" type="text" class="form-control pl-5"
+                                               placeholder="Prix"
+                                               formControlName="Prix">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mt-4 pt-2">
+                                    <form>
+                                        <div class="row ml-3">
+                                            <div class="col-lg-12 mt-2 mb-0">
+                                                <button class="btn btn-primary" (click)="save()">Ajouter</button>
+                                            </div>
+                                            <!--end col-->
+                                        </div>
+                                        <!--end row-->
+                                    </form>
+                                </div>
+                                <!--end col-->
+                            </div>
+                        </form>
+
+
+                        <!--Qcm -->
+                        <form [formGroup]="qcmForm">
+                            <div class="form-group">
+                        <ng-template #content let-modal style="width:10vh">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="modal-basic-title">Qcms</h4>
+                                <button type="button" class="close" aria-label="Close"
+                                        (click)="modal.dismiss('Cross click')">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="row ml-3">
+                                        <div class="col-md-9 mt-4">
+                                          <form>
+                                            <div class="form-group position-relative">
+                                              <label>Question</label>
+                                              <i-feather name="Question" class="fea icon-sm icons"></i-feather>
+                                              <input name="Question" type="text" class="form-control pl-5"
+                                                     placeholder="Question" formControlName="question">
+                                            </div>
+                                          </form>
+                                        </div>
+                                        <div class="col-md-3 mt-5">
+                                          <button class="btn btn-outline-primary"  (click)="createItemou()"  >Ajouter<span
+                                                  style="margin-top: 20px" ><icon class="mt-2"></icon></span></button> <br><br>
+                                        </div>
+                                        </div>
+                                          <div class="row" style="width: 100%" *ngFor="let item of items; let i=index">
+                                              <div class="col-md-9">
+                                                  <div class="row">
+                                                      <div class="col-md-10">
+                                                          <label >Reponse {{i+1}}</label>
+                                                          <input type="text" [id]="'reponse'+item.id"
+                                                                 style="width: 100%;" placeholder="Reponse" class="form-control pl-5"
+                                                                 required  >
+                                                      </div>
+                                                      <div class="col-md-2  mt-3">
+                                                          <mat-button-toggle-group >
+                                                              <mat-button-toggle value="True" style="background-color:#008000">True</mat-button-toggle>
+                                                              <mat-button-toggle value="False" style="background-color:#FF0000">False</mat-button-toggle>
+                                                          </mat-button-toggle-group>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                                <div class="col-md-3 mt-3">
+                                                  <button class="btn btn-outline-primary mt-2">
+                                                    <icon [ngStyle]="{'cursor':'pointer'}"
+                                                          (click)="deleteItem(item.id, i)" >Supprimer
+                                                    </icon>
+                                                  </button>
+                                                </div>
+                                          </div>
+
+
+
+                                </form>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click');saveQCM()"
+                                >Ok
+                                </button>
+                            </div>
+                        </ng-template>
+
+                    <div class="col-lg-12 mt-2 mb-0">
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" (click)="open(content)"> Ajouter Question <span
+                                    style="margin-top: 20px"></span></button>
+                        </div>
+                    </div>
+                    <!--end col-->
+                            </div>
+                        </form>
+                        </div>
+                </div>
+
+                <!--end row-->
+            </div>
+            <!--end col-->
         </div>
-        <!--end col-->
-      </div>
-      <!--end row-->
     </div>
+
+    <!--end col-->
+    <!--end row-->
     <!--end container-->
-  </section>
-  <!--end section-->
-  <!-- Profile Setting End -->
+</section>
+
+<!--end section-->
+<!-- Profile Setting End -->
 
 
-
-  <!-- Back to top -->
-  <a href="javascript: void(0);" class="btn btn-icon btn-soft-primary back-to-top" id="back-to-top"
-    [ngxScrollTo]="'#home'">
+<!-- Back to top -->
+<a href="javascript: void(0);" class="btn btn-icon btn-soft-primary back-to-top" id="back-to-top"
+   [ngxScrollTo]="'#home'">
     <i-feather name="arrow-up" class="icons"></i-feather>
-  </a>
-  <!-- Back to top -->
+</a>
+<!-- Back to top -->

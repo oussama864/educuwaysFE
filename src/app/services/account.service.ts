@@ -14,7 +14,7 @@ import {Auteur} from '../models/auteur.model';
   providedIn: 'root'
 })
 export class AccountService {
-
+ auteur : Auteur;
   userIdentity: Account | null = null;
   private authenticationState = new ReplaySubject<Account | null>(1);
   private authenticationStateAuteur = new ReplaySubject<Auteur | null>(1);
@@ -62,18 +62,16 @@ export class AccountService {
             console.log('account' + account.authorities);
             if (account.authorities[0] === 'ROLE_AUTEUR'){
               this.fetchAuthorByEmail(account.email).subscribe((res) => {
+                localStorage.setItem("auteur", JSON.stringify(res));
+                localStorage.setItem("user", JSON.stringify(account));
                 this.authenticateAuteur(res);
+                this.authenticate(account);
+                this.router.navigate(['/account-profile']);
+
+
               });
             }
-            this.authenticate(account);
-            // After retrieve the account info, the language will be changed to
-            // the user's preferred language configured in the account setting
-           /* if (account?.langKey) {
-              const langKey = this.sessionStorage.retrieve('locale') ?? account.langKey;
-            }
-            if (account) {
-              this.navigateToStoredUrl();
-            }*/
+
           }),
           shareReplay()
       );

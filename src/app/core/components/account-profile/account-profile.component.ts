@@ -5,6 +5,8 @@ import {IConte} from '../../../models/conte.model';
 import {environment} from '../../../../environments/environment';
 import {AuteurService} from "../../../services/auteur.service";
 import {Account} from "../../auth/account.model";
+import {Auteur} from "../../../models/auteur.model";
+
 @Component({
   selector: 'app-account-profile',
   templateUrl: './account-profile.component.html',
@@ -13,24 +15,29 @@ import {Account} from "../../auth/account.model";
 export class AccountProfileComponent implements OnInit {
   navClass = 'nav-light';
   user: Account;
+  users: Auteur ;
   email;
   firstname;
   ch: string;
+
+
   ressourceUrl = environment.serverUrl;
   public contes: IConte[] = [];
-  constructor(private accountservice: AccountService, private conteService: ConteService, private  auteurService: AuteurService ) { }
+
+  constructor(private accountservice: AccountService, private conteService: ConteService, private  auteurService: AuteurService) { }
 
   ngOnInit(): void {
-      this.user = this.accountservice.userIdentity;
-     this.ch = this.accountservice.userIdentity.email;
+
+      this.users = JSON.parse(localStorage.getItem('auteur'));
+      this.user = JSON.parse(localStorage.getItem('user'));
+     this.ch = this.user.email;
      this.conteService.getMyContes(this.ch).subscribe((res) => {
       this.contes = res.body;
     });
-     this.email = this.accountservice.userIdentity.email;
-     this.firstname = this.accountservice.userIdentityAuteur;
-           /*console.log(this.accountservice.userIdentity);*/
-   /*this.conteservice.getMyContes(this.email).subscribe();*/
+     this.email = this.user.email;
+
   }
+
 
 
 

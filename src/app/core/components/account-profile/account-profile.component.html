@@ -16,11 +16,11 @@
               <div class="col-lg-10 col-md-9">
                 <div class="row align-items-end">
                   <div class="col-md-7 text-md-left text-center mt-4 mt-sm-0">
-                    <h3 class="title mb-0">Mr {{user.firstName}} <br> {{user.lastName}}</h3>
-                    <small class="text-muted h6 mr-2">Auteur</small>
+                    <h3 class="title mb-0">  Mr {{user.firstName}}  {{user.lastName}}</h3>
+                    <small class="text-muted h6 mr-2"> Mes points : {{users.points}}</small>
                   </div>
                   <!--end col-->
-                  <div class="col-md-5 text-md-right text-center">
+                  <!--<div class="col-md-5 text-md-right text-center">
                     <ul class="list-unstyled social-icon social mb-0 mt-4">
                       <li class="list-inline-item"><a href="javascript:void(0)" class="rounded" placement="bottom"
                           ngbTooltip="Add Friend">
@@ -39,8 +39,8 @@
                           <i-feather name="tool" class="fea icon-sm fea-social"></i-feather>
                         </a></li>
                     </ul>
-                    <!--end icon-->
-                  </div>
+                    &lt;!&ndash;end icon&ndash;&gt;
+                  </div>-->
                   <!--end col-->
                 </div>
                 <!--end row-->
@@ -74,11 +74,11 @@
                   <span class="pro-icons h3 text-muted">
                     <i class="uil uil-dashboard"></i>
                   </span>
-                  <h6 class="title text-dark h6 my-0">Profile</h6>
+                  <h6 class="title text-dark h6 my-0">Mes Contes</h6>
                 </a>
               </div>
               <!--end col-->
-
+<!--
               <div class="col-6 mt-4 pt-2">
                 <a routerLink="/account-members" class="accounts rounded d-block shadow text-center py-3">
                   <span class="pro-icons h3 text-muted">
@@ -86,20 +86,20 @@
                   </span>
                   <h6 class="title text-dark h6 my-0">Members</h6>
                 </a>
-              </div>
+              </div>-->
               <!--end col-->
 
-              <div class="col-6 mt-4 pt-2">
+           <!--<div class="col-6 mt-4 pt-2">
                 <a routerLink="/account-works" class="accounts rounded d-block shadow text-center py-3">
                   <span class="pro-icons h3 text-muted">
                     <i class="uil uil-file"></i>
                   </span>
                   <h6 class="title text-dark h6 my-0">Works</h6>
                 </a>
-              </div>
-              <!--end col-->
+              </div>-->
 
-              <div class="col-6 mt-4 pt-2">
+
+             <!-- <div class="col-6 mt-4 pt-2">
                 <a routerLink="/account-messages" class="accounts rounded d-block shadow text-center py-3">
                   <span class="pro-icons h3 text-muted">
                     <i class="uil uil-envelope-star"></i>
@@ -107,7 +107,7 @@
                   <h6 class="title text-dark h6 my-0">Messages</h6>
                 </a>
               </div>
-              <!--end col-->
+              &lt;!&ndash;end col&ndash;&gt;-->
 
               <div class="col-6 mt-4 pt-2">
                 <a routerLink="/account-payments" class="accounts rounded d-block shadow text-center py-3">
@@ -124,7 +124,7 @@
                   <span class="pro-icons h3 text-muted">
                     <i class="uil uil-setting"></i>
                   </span>
-                  <h6 class="title text-dark h6 my-0">Settings</h6>
+                  <h6 class="title text-dark h6 my-0">Ajouter</h6>
                 </a>
               </div>
               <!--end col-->
@@ -144,120 +144,15 @@
 
         </div>
       </div>
-      <!--end col-->
 
 
-        <!--<div class="border-bottom pb-4">
-          <h5>Krista Joseph</h5>
-          <p class="text-muted mb-0">I have started my career as a trainee and prove my self and achieve all the
-            milestone with good guidance and reach up to the project manager. In this journey, I understand all the
-            procedure which make me a good developer, team leader, and a project manager.</p>
-        </div>-->
 
-        <!--<div class="border-bottom pb-4">
-          <div class="row">
-            <div class="col-md-6 mt-4">
-              <h5>Personal Details :</h5>
-              <div class="mt-4">
-                <div class="media align-items-center">
-                  <i-feather name="mail" class="fea icon-ex-md text-muted mr-3"></i-feather>
-                  <div class="media-body">
-                    <h6 class="text-primary mb-0">Email :</h6>
-                    <a href="javascript:void(0)" class="text-muted">kristajoseph0203@mail.com</a>
-                  </div>
-                </div>
-                <div class="media align-items-center mt-3">
-                  <i-feather name="bookmark" class="fea icon-ex-md text-muted mr-3"></i-feather>
-                  <div class="media-body">
-                    <h6 class="text-primary mb-0">Skills :</h6>
-                    <a href="javascript:void(0)" class="text-muted">html</a>, <a href="javascript:void(0)"
-                      class="text-muted">css</a>, <a href="javascript:void(0)" class="text-muted">js</a>, <a
-                      href="javascript:void(0)" class="text-muted">mysql</a>
-                  </div>
-                </div>
-                <div class="media align-items-center mt-3">
-                  <i-feather name="italic" class="fea icon-ex-md text-muted mr-3"></i-feather>
-                  <div class="media-body">
-                    <h6 class="text-primary mb-0">Language :</h6>
-                    <a href="javascript:void(0)" class="text-muted">English</a>, <a href="javascript:void(0)"
-                      class="text-muted">Japanese</a>, <a href="javascript:void(0)" class="text-muted">Chinese</a>
-                  </div>
-                </div>
-                <div class="media align-items-center mt-3">
-                  <i-feather name="globe" class="fea icon-ex-md text-muted mr-3"></i-feather>
-                  <div class="media-body">
-                    <h6 class="text-primary mb-0">Website :</h6>
-                    <a href="javascript:void(0)" class="text-muted">www.kristajoseph.com</a>
-                  </div>
-                </div>
-                <div class="media align-items-center mt-3">
-                  <i-feather name="gift" class="fea icon-ex-md text-muted mr-3"></i-feather>
-                  <div class="media-body">
-                    <h6 class="text-primary mb-0">Birthday :</h6>
-                    <p class="text-muted mb-0">2nd March, 1996</p>
-                  </div>
-                </div>
-                <div class="media align-items-center mt-3">
-                  <i-feather name="map-pin" class="fea icon-ex-md text-muted mr-3"></i-feather>
-                  <div class="media-body">
-                    <h6 class="text-primary mb-0">Location :</h6>
-                    <a href="javascript:void(0)" class="text-muted">Beijing, China</a>
-                  </div>
-                </div>
-                <div class="media align-items-center mt-3">
-                  <i-feather name="phone" class="fea icon-ex-md text-muted mr-3"></i-feather>
-                  <div class="media-body">
-                    <h6 class="text-primary mb-0">Cell No :</h6>
-                    <a href="javascript:void(0)" class="text-muted">(+12) 1254-56-4896</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            &lt;!&ndash;end col&ndash;&gt;
 
-            <div class="col-md-6 mt-4 pt-2 pt-sm-0">
-              <h5>Experience :</h5>
-
-              <div class="media key-feature align-items-center p-3 rounded shadow mt-4">
-                <img src="assets/images/job/Circleci.svg" class="avatar avatar-ex-sm" alt="">
-                <div class="media-body content ml-3">
-                  <h4 class="title mb-0">Senior Web Developer</h4>
-                  <p class="text-muted mb-0">3 Years Experience</p>
-                  <p class="text-muted mb-0"><a href="javascript:void(0)" class="text-primary">CircleCi</a> @London, UK
-                  </p>
-                </div>
-              </div>
-
-              <div class="media key-feature align-items-center p-3 rounded shadow mt-4">
-                <img src="assets/images/job/Codepen.svg" class="avatar avatar-ex-sm" alt="">
-                <div class="media-body content ml-3">
-                  <h4 class="title mb-0">Web Designer</h4>
-                  <p class="text-muted mb-0">2 Years Experience</p>
-                  <p class="text-muted mb-0"><a href="javascript:void(0)" class="text-primary">Codepen</a> @Washington
-                    D.C, USA</p>
-                </div>
-              </div>
-
-              <div class="media key-feature align-items-center p-3 rounded shadow mt-4">
-                <img src="assets/images/job/Gitlab.svg" class="avatar avatar-ex-sm" alt="">
-                <div class="media-body content ml-3">
-                  <h4 class="title mb-0">UI Designer</h4>
-                  <p class="text-muted mb-0">2 Years Experience</p>
-                  <p class="text-muted mb-0"><a href="javascript:void(0)" class="text-primary">Gitlab</a> @Perth,
-                    Australia</p>
-                </div>
-              </div>
-            </div>
-            &lt;!&ndash;end col&ndash;&gt;
-          </div>
-          &lt;!&ndash;end row&ndash;&gt;
-        </div>
--->
-
-        <div class="col-lg-8 col-12">
-
-          <div class="rounded shadow p-4">
+      <div class="col-lg-8 col-12">
+            <div class="rounded shadow p-4">
             <h5 class="mb-0">Mes contes : </h5>
+
+
         <div class="row projects-wrapper "  >
 
           <div class=" col-md-6  mt-4 pt-2" *ngFor="let conte of contes">
@@ -281,12 +176,15 @@
 
 
           <!--end col-->
-        </div>
+
+
         <!--end row-->
+      </div>
       </div>
       <!--end col-->
     </div>
     </div>
+
     <!--end row-->
   <!--end container-->
 </section>

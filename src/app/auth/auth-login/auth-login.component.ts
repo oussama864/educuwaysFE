@@ -50,7 +50,6 @@ export class AuthLoginComponent implements OnInit {
                 /* console.log('success');*/
                  this.authenticationError = false;
                /*  console.log('erreur');*/
-                 this.router.navigate(['/account-profile']);
                  /*if (!this.router.getCurrentNavigation()) {
                     // There were no routing during login (eg from navigationToStoredUrl)
 

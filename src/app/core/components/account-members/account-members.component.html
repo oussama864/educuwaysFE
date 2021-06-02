@@ -17,19 +17,8 @@
                <div class="col-lg-10 col-md-9">
                  <div class="row align-items-end">
                    <div class="col-md-7 text-md-left text-center mt-4 mt-sm-0">
-                     <h3 class="title mb-0">******</h3>
-                     <small class="text-muted h6 mr-2">Auteur</small>
-                     <ul class="list-inline mb-0 mt-3">
-                       <li class="list-inline-item mr-2"><a href="javascript:void(0)" class="text-muted"
-                           title="Instagram">
-                           <i-feather name="instagram" class="fea icon-sm mr-2"></i-feather>
-                           Nom auteur
-                         </a></li>
-                       <li class="list-inline-item"><a href="javascript:void(0)" class="text-muted" title="Linkedin">
-                           <i-feather name="linkedin" class="fea icon-sm mr-2"></i-feather>
-                           Nom auteur
-                         </a></li>
-                     </ul>
+                     <h3 class="title mb-0">  Mr {{user.firstName}}  {{user.lastName}}</h3>
+                     <small class="text-muted h6 mr-2"> Mes points : {{users.points}}</small>
                    </div>
                    <!--end col-->
                    <div class="col-md-5 text-md-right text-center">
@@ -117,7 +106,7 @@
                  <a routerLink="/account-profile" class="accounts rounded d-block shadow text-center py-3">
                    <span class="pro-icons h3 text-muted">
                      <i class="uil uil-dashboard"></i></span>
-                   <h6 class="title text-dark h6 my-0">Profile</h6>
+                   <h6 class="title text-dark h6 my-0">Mes Contes</h6>
                  </a>
                </div>
                <!--end col-->
@@ -162,7 +151,7 @@
                  <a routerLink="/account-setting" class="accounts rounded d-block shadow text-center py-3">
                    <span class="pro-icons h3 text-muted">
                      <i class="uil uil-setting"></i></span>
-                   <h6 class="title text-dark h6 my-0">Settings</h6>
+                   <h6 class="title text-dark h6 my-0">Ajouter</h6>
                  </a>
                </div>
                <!--end col-->

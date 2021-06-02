@@ -1,9 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, TemplateRef} from '@angular/core';
 
 import {FormBuilder} from '@angular/forms';
 import {ConteService} from './conte.service';
 import {Conte} from '../../../models/conte.model';
 import {AccountService} from '../../../services/account.service';
+import {Auteur} from "../../../models/auteur.model";
+import {Account} from "../../auth/account.model";
+import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {Qcm} from "../../../models/qcm.model";
 
 
 
@@ -13,6 +17,16 @@ import {AccountService} from '../../../services/account.service';
   styleUrls: ['./account-setting.component.css']
 })
 export class AccountSettingComponent implements OnInit {
+  users: Auteur ;
+  items = [];
+  closeResult: any;
+  tabQCM :Qcm[] = [];
+
+
+
+  private affectedType: Boolean | boolean;
+  idReponse = 0;
+  user: Account;
   editForm = this.fb.group({
     /*id: [],*/
     nom: [],
@@ -32,10 +46,14 @@ export class AccountSettingComponent implements OnInit {
     auteur: [],
     competition: [],*/
   });
+  qcmForm = this.fb.group({
+    question:[],
+  });
   constructor(
       protected conteService: ConteService,
       protected fb: FormBuilder,
-      private accountservice: AccountService
+      private accountservice: AccountService,
+      protected modalService: NgbModal
   ) {}
 
 
@@ -56,6 +74,8 @@ export class AccountSettingComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.users =this.accountservice.userIdentityAuteur;
+    this.user = this.accountservice.userIdentity;
 
   }
 
@@ -117,6 +137,10 @@ export class AccountSettingComponent implements OnInit {
 
 
   // tslint:disable-next-line:typedef
+  public item: string;
+  public i: any;
+  private valid: any;
+
   private createFromForm() {
     console.log(this.accountservice.userIdentityAuteur);
     return {
@@ -129,10 +153,79 @@ export class AccountSettingComponent implements OnInit {
         titre: this.editForm.get(['titre'])!.value,
         nbPage: this.editForm.get(['Nombres_de_pages'])!.value,
         maisonEdition: this.editForm.get(['MaisonEdition'])!.value,
-      emailAuteur : this.accountservice.userIdentity.email
+      emailAuteur : this.accountservice.userIdentity.email,
+
       };
+  }
+
+
+
+  deleteItem(id, i: number) {
+    this.items.splice(i, 1);
+  }
+
+  createItemou() :void{
+    let valid = true;
+
+    this.items.forEach((item, i) => {
+      const reponse = (<HTMLInputElement>document.getElementById('reponse' + item.id)).value;
+      this.items[i].value.reponse = reponse;
+      if ( reponse === null ){
+        valid = false;
+      }
+    });
+    console.log(this.items)
+    if (valid) {
+
+      if(this.items.length < 4){
+
+        this.items.push({id: this.idReponse, value: { reponse: null}});
+        this.idReponse++;
+      }
+    }else {
+      console.log('veuillez remplir Svp .');
     }
   }
+
+  /* ajouter Qcm oussama*/
+
+
+  open(content: TemplateRef<any>) {
+    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title', windowClass: "myCustomModalClass" }).result.then(
+        result => {
+          this.closeResult = `Closed with: ${result}`;
+        },
+        reason => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        }
+    );
+  }
+
+
+  private getDismissReason(reason: any) :string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
+
+  }
+
+  saveQCM() {
+    this.items.forEach((item, i) => {
+      const reponse = (<HTMLInputElement>document.getElementById('reponse' + item.id)).value;
+      this.items[i].value.reponse = reponse;
+    });
+    const question = this.qcmForm.get(["question"])!.value;
+    this.items.forEach(value => {
+      console.log(value);
+    });
+    this.items = [];
+    this.idReponse = 0;
+  }
+}
 
 
 

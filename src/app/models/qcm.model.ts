@@ -5,8 +5,8 @@ import {ICompetition} from './competition.model';
 export interface IQcm {
   id?: string;
   question?: string | null;
-  choixDispo?: string | null;
-  choixCorrect?: string | null;
+  choixDispo?: string[] | null;
+  choixCorrect?: string[] | null;
   createdBy?: string | null;
   createdDate?: Date | null;
   deleted?: boolean | null;
@@ -20,8 +20,8 @@ export class Qcm implements IQcm {
   constructor(
     public id?: string,
     public question?: string | null,
-    public choixDispo?: string | null,
-    public choixCorrect?: string | null,
+    public choixDispo?: string[] | null,
+    public choixCorrect?: string[] | null,
     public createdBy?: string | null,
     public createdDate?: Date | null,
     public deleted?: boolean | null,

@@ -16,22 +16,12 @@
               <div class="col-lg-10 col-md-9">
                 <div class="row align-items-end">
                   <div class="col-md-7 text-md-left text-center mt-4 mt-sm-0">
-                    <h3 class="title mb-0">Krista Joseph</h3>
-                    <small class="text-muted h6 mr-2">Web Developer</small>
-                    <ul class="list-inline mb-0 mt-3">
-                      <li class="list-inline-item mr-2"><a href="javascript:void(0)" class="text-muted"
-                          title="Instagram">
-                          <i-feather name="instagram" class="fea icon-sm mr-2"></i-feather>
-                          krista_joseph
-                        </a></li>
-                      <li class="list-inline-item"><a href="javascript:void(0)" class="text-muted" title="Linkedin">
-                          <i-feather name="linkedin" class="fea icon-sm mr-2"></i-feather>
-                          Krista Joseph
-                        </a></li>
-                    </ul>
+                    <h3 class="title mb-0">  Mr {{user.firstName}}  {{user.lastName}}</h3>
+                    <small class="text-muted h6 mr-2"> Mes points : {{users.points}}</small>
+
                   </div>
                   <!--end col-->
-                  <div class="col-md-5 text-md-right text-center">
+                 <!-- <div class="col-md-5 text-md-right text-center">
                     <ul class="list-unstyled social-icon social mb-0 mt-4">
                       <li class="list-inline-item"><a href="javascript:void(0)" class="rounded" placement="bottom"
                           ngbTooltip="Add Friend">
@@ -50,8 +40,8 @@
                           <i-feather name="tool" class="fea icon-sm fea-social"></i-feather>
                         </a></li>
                     </ul>
-                    <!--end icon-->
-                  </div>
+                    &lt;!&ndash;end icon&ndash;&gt;
+                  </div>-->
                   <!--end col-->
                 </div>
                 <!--end row-->
@@ -117,12 +107,12 @@
                   <span class="pro-icons h3 text-muted">
                     <i class="uil uil-dashboard"></i>
                   </span>
-                  <h6 class="title text-dark h6 my-0">Profile</h6>
+                  <h6 class="title text-dark h6 my-0">Mes Contes</h6>
                 </a>
               </div>
               <!--end col-->
 
-              <div class="col-6 mt-4 pt-2">
+              <!--<div class="col-6 mt-4 pt-2">
                 <a routerLink="/account-members" class="accounts rounded d-block shadow text-center py-3">
                   <span class="pro-icons h3 text-muted">
                     <i class="uil uil-users-alt"></i>
@@ -130,7 +120,7 @@
                   <h6 class="title text-dark h6 my-0">Members</h6>
                 </a>
               </div>
-              <!--end col-->
+              &lt;!&ndash;end col&ndash;&gt;-->
 
               <div class="col-6 mt-4 pt-2">
                 <a routerLink="/account-works" class="accounts rounded d-block shadow text-center py-3">
@@ -142,7 +132,7 @@
               </div>
               <!--end col-->
 
-              <div class="col-6 mt-4 pt-2">
+             <!-- <div class="col-6 mt-4 pt-2">
                 <a routerLink="/account-messages" class="accounts rounded d-block shadow text-center py-3">
                   <span class="pro-icons h3 text-muted">
                     <i class="uil uil-envelope-star"></i>
@@ -150,7 +140,7 @@
                   <h6 class="title text-dark h6 my-0">Messages</h6>
                 </a>
               </div>
-              <!--end col-->
+              &lt;!&ndash;end col&ndash;&gt;-->
 
               <div class="col-6 mt-4 pt-2">
                 <a routerLink="/account-payments" class="accounts active rounded d-block shadow text-center py-3">
@@ -167,7 +157,7 @@
                   <span class="pro-icons h3 text-muted">
                     <i class="uil uil-setting"></i>
                   </span>
-                  <h6 class="title text-dark h6 my-0">Settings</h6>
+                  <h6 class="title text-dark h6 my-0">Ajouter</h6>
                 </a>
               </div>
               <!--end col-->

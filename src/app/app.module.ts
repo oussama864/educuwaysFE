@@ -145,6 +145,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import {LocalStorageService, SessionStorageService} from "ngx-webstorage";
 import {AuthInterceptor} from "./core/interceptor/auth.interceptor";
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -275,27 +276,28 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     SwitcherComponent,
     ScrollspyDirective
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    RouterModule,
-    CarouselModule,
-    FeatherModule.pick(allIcons),
-    ScrollToModule.forRoot(),
-    RouterModule.forRoot([], {relativeLinkResolution: 'legacy'}),
-    NgxYoutubePlayerModule,
-    NgbModule,
-    NgbNavModule,
-    FormsModule,
-    SwiperModule,
-    NgxTypedJsModule,
-    FlatpickrModule.forRoot(),
-    CountToModule,
-    NgxMasonryModule,
-    ReactiveFormsModule,
-      HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        RouterModule,
+        CarouselModule,
+        FeatherModule.pick(allIcons),
+        ScrollToModule.forRoot(),
+        RouterModule.forRoot([], {relativeLinkResolution: 'legacy'}),
+        NgxYoutubePlayerModule,
+        NgbModule,
+        NgbNavModule,
+        FormsModule,
+        SwiperModule,
+        NgxTypedJsModule,
+        FlatpickrModule.forRoot(),
+        CountToModule,
+        NgxMasonryModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        MatButtonToggleModule
+    ],
   exports: [
     FeatherModule,
     ScrollspyDirective,
